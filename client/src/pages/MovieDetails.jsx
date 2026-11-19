@@ -16,8 +16,7 @@ import axios from "axios";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-const API_BASE_URL = "http://localhost:5000/api";
-const SERVER_BASE_URL = "http://localhost:5000";
+import { API_BASE_URL, SERVER_BASE_URL } from "../utils/api";
 
 // Build a usable image URL from the backend poster path.
 const getPosterUrl = (poster) => {

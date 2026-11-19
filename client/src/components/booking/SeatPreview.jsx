@@ -19,12 +19,7 @@ import Footer from "../Footer";
 
 import "./SeatPreview.css";
 
-
-
-const API_BASE_URL = "http://localhost:5000/api";
-
-
-
+import { API_BASE_URL, SERVER_BASE_URL } from "../../utils/api";
 const CATEGORY_ORDER = ["recliner", "premium", "regular"];
 
 
@@ -59,11 +54,9 @@ const getPosterUrl = (poster) => {
 
 
 
-  return `http://localhost:5000${
-
-    poster.startsWith("/") ? poster : `/${poster}`
-
-  }`;
+  return `${SERVER_BASE_URL}${
+  poster.startsWith("/") ? poster : `/${poster}`
+}`;
 
 };
 

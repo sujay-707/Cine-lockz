@@ -16,11 +16,10 @@ import {
 import MovieForm from "../../components/admin/MovieForm";
 import "../../styles/admin/ManageMovies.css";
 
-const API_URL =
-  import.meta.env.VITE_API_URL || "http://localhost:5000";
+  import { API_BASE_URL, SERVER_BASE_URL } from "../../utils/api";
 
 const movieAPI = axios.create({
-  baseURL: `${API_URL}/api`,
+  baseURL: API_BASE_URL,
 });
 
 const genres = [
@@ -221,7 +220,7 @@ function ManageMovies() {
       return poster;
     }
 
-    return `${API_URL}${poster}`;
+    return `${SERVER_BASE_URL}${poster}`;
   };
 
   return (

@@ -13,7 +13,7 @@ import {
 
 import "../../styles/admin/AdminDashboard.css";
 
-const API_URL = "http://localhost:5000/api";
+import { API_BASE_URL } from "../../utils/api";
 
 function formatNumber(value) {
   return Number(value || 0).toLocaleString("en-IN");
@@ -61,7 +61,7 @@ export default function AdminDashboard() {
         throw new Error("Admin session not found. Please log in again.");
       }
 
-      const response = await fetch(`${API_URL}/admin/dashboard`, {
+      const response = await fetch(`${API_BASE_URL}/admin/dashboard`, {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,

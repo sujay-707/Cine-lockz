@@ -11,7 +11,7 @@ import axios from "axios";
 
 const AuthContext = createContext(null);
 
-const API_BASE_URL = "http://localhost:5000/api";
+import { API_BASE_URL } from "../utils/api";
 
 const TOKEN_KEY = "cinelockz_token";
 

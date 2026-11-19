@@ -1,6 +1,7 @@
 
 import { useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { SERVER_BASE_URL } from "../utils/api";
 import {
   ArrowLeft,
   ShieldCheck,
@@ -84,7 +85,7 @@ export default function Payment() {
   const posterUrl = movie?.poster
     ? movie.poster.startsWith("http")
       ? movie.poster
-      : `http://localhost:5000${movie.poster}`
+      : `${SERVER_BASE_URL}${movie.poster}`
     : "";
 
   console.log("Movie data:", movie);

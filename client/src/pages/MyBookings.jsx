@@ -12,7 +12,7 @@ import Footer from "../components/Footer";
 import { useAuth } from "../context/AuthContext";
 import "./MyBookings.css";
 
-const API_BASE_URL = "http://localhost:5000/api";
+import { API_BASE_URL } from "../utils/api";
 
 const formatDate = (date) =>
   date ? new Date(date).toLocaleDateString("en-IN", {

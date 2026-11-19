@@ -17,7 +17,7 @@ import { useAuth } from "../context/AuthContext";
 
 import "./Profile.css";
 
-const API_BASE_URL = "http://localhost:5000/api";
+import { API_BASE_URL } from "../utils/api";
 
 export default function Profile() {
   const { token, user } = useAuth();

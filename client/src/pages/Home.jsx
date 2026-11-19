@@ -9,8 +9,7 @@ import MovieCard from "../components/MovieCard";
 import Hero from "../components/Hero";
 import FeatureBar from "../components/FeatureBar";
 
-const API_BASE_URL = "http://localhost:5000/api";
-const SERVER_BASE_URL = "http://localhost:5000";
+import { API_BASE_URL, SERVER_BASE_URL } from "../utils/api";
 
 // Convert backend poster path into a complete image URL.
 const getPosterUrl = (poster) => {

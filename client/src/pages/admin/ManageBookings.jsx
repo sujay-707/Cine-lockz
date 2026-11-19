@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import "../../styles/admin/ManageBookings.css";
 
-const API_URL = "http://localhost:5000/api";
+import { API_BASE_URL } from "../../utils/api";
 
 function ManageBookings() {
   const [bookings, setBookings] = useState([]);
@@ -50,7 +50,7 @@ function ManageBookings() {
       });
 
       const response = await fetch(
-        `${API_URL}/admin/bookings?${params.toString()}`,
+        `${API_BASE_URL}/admin/bookings?${params.toString()}`,
         {
           method: "GET",
           headers: {
