@@ -1,0 +1,733 @@
+
+/* =========================================
+   CINELOCKZ SEAT DESIGN SYSTEM
+========================================= */
+
+:root {
+  --seat-bg: #0B0B0D;
+  --seat-surface: #18181C;
+  --seat-border: #2A2A32;
+
+  --seat-gold: #D4AF37;
+  --seat-gold-light: #F3C669;
+
+  --seat-text: #FFFFFF;
+  --seat-muted: #A1A1AA;
+
+  --seat-available: #10B981;
+  --seat-selected: #EAB308;
+  --seat-locked: #EF4444;
+  --seat-booked: #55555D;
+}
+
+/* =========================================
+   BASE CINEMA SEAT
+========================================= */
+
+.cinema-seat {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 2px;
+
+  border: 1px solid transparent;
+  border-radius: 9px;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  transition:
+    transform 180ms ease,
+    filter 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease;
+}
+
+.cinema-seat svg {
+  display: block;
+  overflow: visible;
+}
+
+/* Hover */
+.cinema-seat:not(:disabled):hover {
+  transform: translateY(-4px) scale(1.06);
+  filter: brightness(1.2);
+}
+
+/* Keyboard accessibility */
+.cinema-seat:focus-visible {
+  outline: 2px solid #FFFFFF;
+  outline-offset: 3px;
+}
+
+/* =========================================
+   SELECTED SEAT
+========================================= */
+
+.cinema-seat--selected {
+  background: rgba(234, 179, 8, 0.14);
+  border-color: var(--seat-selected);
+
+  transform: scale(1.06);
+
+  animation: seat-selected 220ms ease;
+}
+
+/* =========================================
+   LOCKED SEAT
+========================================= */
+
+.cinema-seat--locked {
+  cursor: not-allowed;
+  opacity: 0.95;
+}
+
+/* =========================================
+   BOOKED SEAT
+========================================= */
+
+.cinema-seat--booked {
+  cursor: not-allowed;
+  opacity: 0.65;
+  filter: grayscale(0.4);
+}
+
+/* Disabled seats */
+.cinema-seat:disabled {
+  cursor: not-allowed;
+}
+
+/* =========================================
+   SEAT ANIMATIONS
+========================================= */
+
+@keyframes seat-selected {
+  0% {
+    transform: scale(1);
+  }
+
+  60% {
+    transform: scale(1.13);
+  }
+
+  100% {
+    transform: scale(1.06);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cinema-seat {
+    transition: none;
+    animation: none;
+  }
+}
+
+/* =========================================
+   SEAT PREVIEW PAGE
+========================================= */
+
+.seat-preview-page {
+  min-height: 100vh;
+  padding: 32px 20px 60px;
+
+  background: var(--seat-bg);
+  color: var(--seat-text);
+
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+.seat-preview-header {
+  max-width: 1100px;
+  margin: 0 auto 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.seat-eyebrow {
+  color: var(--seat-gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.seat-preview-header h1 {
+  color: var(--seat-text);
+  font-size: 30px;
+  margin: 10px 0 8px;
+}
+
+.seat-preview-header p {
+  color: var(--seat-muted);
+  margin: 0;
+  font-size: 14px;
+}
+
+.seat-show-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+
+  color: var(--seat-muted);
+  font-size: 12px;
+}
+
+/* Main layout card */
+.seat-layout-card {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 24px;
+
+  background: var(--seat-surface);
+
+  border: 1px solid var(--seat-border);
+  border-radius: 16px;
+}
+
+/* Layout heading */
+.seat-layout-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  margin-bottom: 28px;
+}
+
+.seat-layout-heading h2 {
+  color: var(--seat-text);
+  font-size: 20px;
+  margin: 0 0 7px;
+}
+
+.seat-layout-heading p {
+  color: var(--seat-muted);
+  font-size: 13px;
+  margin: 0;
+}
+
+.seat-technology {
+  color: var(--seat-gold);
+
+  border: 1px solid var(--seat-border);
+  border-radius: 20px;
+
+  padding: 7px 14px;
+  font-size: 12px;
+}
+
+/* =========================================
+   SEAT MAP AND CATEGORY SECTIONS
+========================================= */
+
+.seat-map-scroll {
+  overflow-x: auto;
+  padding: 12px 4px 20px;
+}
+
+.seat-sections {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 38px;
+
+  width: max-content;
+  min-width: 100%;
+}
+
+.seat-section {
+  width: max-content;
+  min-width: 100%;
+}
+
+/* Category heading */
+.seat-section-heading {
+  max-width: 760px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+
+  padding: 0 12px 12px;
+}
+
+.seat-section-heading h3 {
+  margin: 0;
+
+  color: var(--seat-text);
+  font-size: 14px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.seat-section-heading span {
+  display: block;
+
+  color: var(--seat-muted);
+  font-size: 11px;
+
+  margin-top: 5px;
+}
+
+.seat-section-heading strong {
+  color: var(--seat-gold);
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.seat-section-heading small {
+  color: var(--seat-muted);
+  font-size: 11px;
+  font-weight: 400;
+}
+
+/* Category divider */
+.seat-section-divider {
+  max-width: 760px;
+  height: 1px;
+
+  margin: 0 auto 18px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #55555D 15%,
+    #D4AF37 50%,
+    #55555D 85%,
+    transparent
+  );
+}
+
+/* Category rows */
+.seat-section-rows {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Individual seat row */
+.seat-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  width: max-content;
+}
+
+.row-label {
+  width: 18px;
+  flex-shrink: 0;
+
+  color: var(--seat-muted);
+  font-size: 12px;
+  text-align: center;
+}
+
+/* Seat grid */
+.seat-grid {
+  display: grid;
+  align-items: center;
+  gap: 5px 3px;
+}
+
+.seat-cell {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.seat-number {
+  color: var(--seat-muted);
+  font-size: 9px;
+  margin-top: 1px;
+}
+
+/* =========================================
+   CINEMA SCREEN AT BOTTOM
+========================================= */
+
+.cinema-screen-area {
+  max-width: 650px;
+  margin: 48px auto 0;
+
+  padding: 0 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cinema-screen-glow {
+  width: 100%;
+  height: 24px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(212, 175, 55, 0.22),
+    transparent
+  );
+
+  filter: blur(8px);
+}
+
+.cinema-screen-line {
+  width: 100%;
+  height: 3px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--seat-gold),
+    transparent
+  );
+
+  border-radius: 50%;
+}
+
+.cinema-screen-area span {
+  margin-top: 12px;
+
+  color: var(--seat-muted);
+  font-size: 11px;
+  letter-spacing: 6px;
+}
+
+.cinema-screen-area small {
+  margin-top: 6px;
+
+  color: #71717A;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+/* =========================================
+   SEAT STATUS LEGEND
+========================================= */
+
+.seat-legend {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 22px;
+
+  margin-top: 38px;
+
+  font-size: 13px;
+}
+
+.seat-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.seat-legend-color {
+  width: 13px;
+  height: 13px;
+
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* =========================================
+   CATEGORY SUMMARY
+========================================= */
+
+.seat-category-summary {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 42px;
+
+  border-top: 1px solid var(--seat-border);
+
+  margin-top: 30px;
+  padding-top: 24px;
+}
+
+.seat-category-summary div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.seat-category-summary span {
+  color: var(--seat-muted);
+  font-size: 12px;
+}
+
+.seat-category-summary strong {
+  color: var(--seat-text);
+  font-size: 16px;
+}
+
+/* =========================================
+   AVAILABILITY SUMMARY
+========================================= */
+
+.seat-availability {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 28px;
+
+  margin-top: 22px;
+
+  color: var(--seat-muted);
+  font-size: 13px;
+}
+
+.seat-availability strong {
+  color: var(--seat-text);
+  margin-left: 4px;
+}
+
+/* =========================================
+   BOOKING SUMMARY
+========================================= */
+
+.seat-selection-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  border-top: 1px solid var(--seat-border);
+
+  margin-top: 30px;
+  padding-top: 25px;
+}
+
+.seat-selection-details {
+  min-width: 0;
+}
+
+.seat-selection-details h3 {
+  color: var(--seat-text);
+  font-size: 16px;
+  margin: 0 0 10px;
+}
+
+.seat-selection-details p {
+  color: var(--seat-selected);
+  margin: 0 0 7px;
+  overflow-wrap: anywhere;
+}
+
+.seat-selection-details span {
+  color: var(--seat-muted);
+  font-size: 12px;
+}
+
+.seat-total-price {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.seat-total-price span {
+  color: var(--seat-muted);
+  font-size: 13px;
+}
+
+.seat-total-price strong {
+  color: var(--seat-gold);
+  font-size: 24px;
+}
+
+/* Continue button */
+.seat-continue-button {
+  display: block;
+  width: 100%;
+
+  margin-top: 28px;
+  padding: 15px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: linear-gradient(
+    135deg,
+    var(--seat-gold),
+    var(--seat-gold-light)
+  );
+
+  color: var(--seat-bg);
+
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 180ms ease,
+    filter 180ms ease;
+}
+
+.seat-continue-button:not(:disabled):hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+.seat-continue-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.seat-preview-note {
+  color: var(--seat-muted);
+  text-align: center;
+  font-size: 11px;
+  margin-top: 14px;
+}
+
+/* =========================================
+   LOADING AND ERROR STATES
+========================================= */
+
+.seat-preview-message {
+  min-height: 70vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  color: var(--seat-muted);
+  text-align: center;
+}
+
+.seat-preview-message h2 {
+  color: var(--seat-text);
+  margin: 0;
+}
+
+.seat-preview-message p {
+  margin: 0;
+}
+
+.seat-error-title {
+  color: var(--seat-locked) !important;
+}
+
+.seat-preview-loader {
+  width: 32px;
+  height: 32px;
+
+  border: 3px solid var(--seat-border);
+  border-top-color: var(--seat-gold);
+
+  border-radius: 50%;
+
+  animation: seat-preview-spin 0.8s linear infinite;
+}
+
+@keyframes seat-preview-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.seat-retry-button {
+  margin-top: 10px;
+  padding: 11px 22px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: linear-gradient(
+    135deg,
+    var(--seat-gold),
+    var(--seat-gold-light)
+  );
+
+  color: var(--seat-bg);
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 768px) {
+  .seat-preview-page {
+    padding: 22px 12px 40px;
+  }
+
+  .seat-preview-header h1 {
+    font-size: 25px;
+  }
+
+  .seat-layout-card {
+    padding: 24px 12px;
+  }
+
+  .seat-show-info {
+    justify-content: flex-start;
+  }
+
+  .seat-sections {
+    gap: 28px;
+  }
+
+  .seat-section-heading {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .seat-availability {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .seat-preview-header h1 {
+    font-size: 22px;
+  }
+
+  .seat-layout-card {
+    padding: 20px 8px;
+  }
+
+  .seat-section-heading h3 {
+    font-size: 12px;
+  }
+
+  .seat-section-heading strong {
+    font-size: 13px;
+  }
+
+  .seat-legend {
+    gap: 14px;
+    font-size: 11px;
+  }
+
+  .seat-category-summary {
+    gap: 24px;
+  }
+
+  .seat-selection-summary {
+    align-items: flex-start;
+  }
+}

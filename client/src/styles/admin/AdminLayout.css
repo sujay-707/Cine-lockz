@@ -1,0 +1,251 @@
+
+/* =========================================
+   CINELOCKZ ADMIN - GLOBAL THEME
+========================================= */
+
+:root,
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --admin-bg: #0B0B0D;
+  --admin-surface: #18181C;
+  --admin-surface-alt: #202027;
+  --admin-border: #2A2A32;
+
+  --admin-gold: #D4AF37;
+  --admin-gold-hover: #F3C669;
+
+  --admin-text: #FFFFFF;
+  --admin-muted: #A1A1AA;
+
+  --admin-input-bg: #111114;
+  --admin-hover: #25252C;
+  --admin-shadow: 0 8px 30px rgba(0, 0, 0, 0.22);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --admin-bg: #F5F6F8;
+  --admin-surface: #FFFFFF;
+  --admin-surface-alt: #F0F1F4;
+  --admin-border: #E1E3E8;
+
+  --admin-gold: #A98216;
+  --admin-gold-hover: #C69C27;
+
+  --admin-text: #18181C;
+  --admin-muted: #656B75;
+
+  --admin-input-bg: #FFFFFF;
+  --admin-hover: #F1F2F5;
+  --admin-shadow: 0 8px 30px rgba(20, 25, 35, 0.07);
+}
+
+/* =========================================
+   BASE
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--admin-bg);
+  color: var(--admin-text);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================================
+   ADMIN LAYOUT
+========================================= */
+
+.admin-layout {
+  min-height: 100vh;
+  width: 100%;
+  background: var(--admin-bg);
+  color: var(--admin-text);
+  overflow-x: clip;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.admin-main {
+  width: 100%;
+  min-width: 0;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: var(--admin-bg);
+  overflow-x: clip;
+}
+
+/* =========================================
+   PAGE HEADING
+========================================= */
+
+.admin-top-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  width: 100%;
+  min-height: 105px;
+  padding: 25px 32px;
+
+  background: var(--admin-surface);
+  border-bottom: 1px solid var(--admin-border);
+}
+
+.admin-top-heading h1 {
+  margin: 0;
+  color: var(--admin-text);
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.admin-top-heading p {
+  margin: 8px 0 0;
+  color: var(--admin-muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* =========================================
+   CONTENT AREA
+========================================= */
+
+.admin-content {
+  width: 100%;
+  max-width: 1800px;
+  min-width: 0;
+  margin: 0 auto;
+  padding: 30px 32px 45px;
+}
+
+.admin-content > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* =========================================
+   GENERAL ADMIN SURFACES
+========================================= */
+
+.admin-page,
+.admin-panel,
+.admin-dashboard-panel,
+.admin-stat-card {
+  color: var(--admin-text);
+}
+
+.admin-page {
+  background: var(--admin-surface);
+  border: 1px solid var(--admin-border);
+  border-radius: 12px;
+  box-shadow: var(--admin-shadow);
+}
+
+.admin-page h2,
+.admin-page h3 {
+  color: var(--admin-text);
+}
+
+.admin-page p {
+  color: var(--admin-muted);
+}
+
+/* =========================================
+   THEME-AWARE FORM ELEMENTS
+========================================= */
+
+.admin-layout input,
+.admin-layout select,
+.admin-layout textarea {
+  color: var(--admin-text);
+  background: var(--admin-input-bg);
+  border-color: var(--admin-border);
+}
+
+.admin-layout input::placeholder,
+.admin-layout textarea::placeholder {
+  color: var(--admin-muted);
+}
+
+.admin-layout input:focus,
+.admin-layout select:focus,
+.admin-layout textarea:focus {
+  outline: none;
+  border-color: var(--admin-gold);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.12);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1024px) {
+  .admin-content {
+    padding: 25px 22px 35px;
+  }
+
+  .admin-top-heading {
+    padding: 23px 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-top-heading {
+    min-height: 85px;
+    padding: 19px 18px;
+  }
+
+  .admin-top-heading h1 {
+    font-size: 22px;
+  }
+
+  .admin-content {
+    padding: 20px 18px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-top-heading {
+    padding: 17px 15px;
+  }
+
+  .admin-top-heading h1 {
+    font-size: 20px;
+  }
+
+  .admin-top-heading p {
+    font-size: 12px;
+  }
+
+  .admin-content {
+    padding: 16px 13px 25px;
+  }
+}

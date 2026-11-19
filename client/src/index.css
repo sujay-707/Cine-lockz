@@ -1,0 +1,80 @@
+
+:root {
+  color-scheme: dark;
+
+  --bg: #0B0B0D;
+  --surface: #18181C;
+  --border: #2A2A32;
+  --gold: #D4AF37;
+  --champagne: #F3C669;
+  --white: #FFFFFF;
+  --silver: #A1A1AA;
+  --green: #10B981;
+  --red: #EF4444;
+
+  --page-bg: #0B0B0D;
+  --card-bg: #18181C;
+  --header-bg: rgba(11, 11, 13, 0.94);
+  --text-primary: #FFFFFF;
+  --text-secondary: #A1A1AA;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --bg: #F5F5F7;
+  --surface: #FFFFFF;
+  --border: #E4E4E7;
+  --gold: #B58B16;
+  --champagne: #98700D;
+  --white: #18181C;
+  --silver: #64646D;
+
+  --page-bg: #F5F5F7;
+  --card-bg: #FFFFFF;
+  --header-bg: rgba(255, 255, 255, 0.94);
+  --text-primary: #18181C;
+  --text-secondary: #64646D;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+
+  background: var(--page-bg);
+  color: var(--text-primary);
+
+  font-family: "DM Sans", sans-serif;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+button,
+a,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid #F3C669;
+  outline-offset: 3px;
+}
+
+::selection {
+  background: #D4AF37;
+  color: #0B0B0D;
+}

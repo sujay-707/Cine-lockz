@@ -1,0 +1,341 @@
+
+/* =========================================
+   ABOUT US PAGE
+========================================= */
+
+.about-page {
+  min-height: 100vh;
+  background: var(--page-bg);
+  color: var(--text-primary);
+}
+
+.about-page main {
+  overflow: hidden;
+}
+
+/* Hero */
+
+.about-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  min-height: 460px;
+  padding: 75px clamp(25px, 9vw, 140px);
+  background:
+    radial-gradient(
+      circle at 78% 45%,
+      rgba(212, 175, 55, 0.13),
+      transparent 35%
+    ),
+    var(--page-bg);
+}
+
+.about-eyebrow,
+.about-closing > span {
+  color: var(--champagne);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+}
+
+.about-hero h1 {
+  margin: 20px 0;
+  font-family: Manrope, sans-serif;
+  font-size: clamp(38px, 5vw, 64px);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.055em;
+}
+
+.about-hero h1 span,
+.about-story h2 span,
+.about-features-heading h2 span,
+.about-closing h2 span {
+  color: var(--champagne);
+}
+
+.about-hero-content > p {
+  max-width: 490px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.about-hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 14px 19px;
+  color: #0B0B0D;
+  background: linear-gradient(135deg, #D4AF37, #F3C669);
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.about-hero-button:hover {
+  transform: translateY(-3px);
+}
+
+.about-hero-art {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+}
+
+.about-art-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 230px;
+  height: 230px;
+  color: var(--champagne);
+  background: radial-gradient(
+    circle,
+    rgba(212, 175, 55, 0.16),
+    rgba(212, 175, 55, 0.02) 70%
+  );
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 50%;
+  box-shadow: 0 0 70px rgba(212, 175, 55, 0.08);
+}
+
+.about-art-caption {
+  color: var(--text-secondary);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.25em;
+}
+
+/* Shared section label */
+
+.about-section-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--champagne);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.about-section-label > span {
+  width: 25px;
+  height: 2px;
+  background: var(--gold);
+}
+
+/* Story */
+
+.about-story {
+  padding: 75px clamp(25px, 9vw, 140px);
+  background: var(--card-bg);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.about-story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  margin-top: 35px;
+}
+
+.about-story h2,
+.about-features-heading h2 {
+  margin: 0;
+  font-family: Manrope, sans-serif;
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.04em;
+}
+
+.about-story-description p {
+  margin: 0 0 17px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+/* Mission and vision */
+
+.about-purpose {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  padding: 70px clamp(25px, 9vw, 140px);
+}
+
+.about-purpose-card {
+  padding: 30px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.about-purpose-card:hover,
+.about-feature-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+}
+
+.about-purpose-icon,
+.about-feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 22px;
+  color: var(--champagne);
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 10px;
+}
+
+.about-purpose-card > span {
+  color: var(--champagne);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.about-purpose-card h3 {
+  margin: 13px 0;
+  font-family: Manrope, sans-serif;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.about-purpose-card p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+/* Features */
+
+.about-features {
+  padding: 75px clamp(25px, 9vw, 140px);
+  background: var(--card-bg);
+  border-top: 1px solid var(--border);
+}
+
+.about-features-heading {
+  max-width: 650px;
+}
+
+.about-features-heading h2 {
+  margin-top: 20px;
+}
+
+.about-features-heading > p {
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.about-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 38px;
+}
+
+.about-feature-card {
+  padding: 25px;
+  background: var(--page-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.about-feature-card h3 {
+  margin: 0 0 12px;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.about-feature-card p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+/* Closing */
+
+.about-closing {
+  padding: 85px 25px;
+  text-align: center;
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(212, 175, 55, 0.13),
+      transparent 65%
+    ),
+    var(--page-bg);
+}
+
+.about-closing h2 {
+  margin: 20px 0;
+  font-family: Manrope, sans-serif;
+  font-size: clamp(30px, 4.5vw, 48px);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.04em;
+}
+
+/* Responsive */
+
+@media (max-width: 850px) {
+  .about-hero {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .about-hero-art {
+    display: none;
+  }
+
+  .about-story-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .about-features-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 580px) {
+  .about-hero,
+  .about-story,
+  .about-purpose,
+  .about-features {
+    padding: 48px 20px;
+  }
+
+  .about-purpose,
+  .about-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-purpose-card {
+    padding: 23px;
+  }
+
+  .about-closing {
+    padding: 60px 20px;
+  }
+}

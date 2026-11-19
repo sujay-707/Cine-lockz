@@ -1,0 +1,322 @@
+
+/* =========================================
+   THEATRE DISCOVERY SECTION
+========================================= */
+
+.theatres-section {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 65px clamp(20px, 4vw, 64px);
+  color: var(--text-primary);
+}
+
+.theatres-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.theatres-overline {
+  color: var(--champagne);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.theatres-heading h2 {
+  margin: 9px 0;
+  font-family: Manrope, sans-serif;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+}
+
+.theatres-heading p {
+  max-width: 510px;
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.theatres-count {
+  padding: 9px 13px;
+  color: var(--champagne);
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+/* Grid */
+
+.theatres-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* Theatre card */
+
+.theatre-discovery-card {
+  overflow: hidden;
+  min-width: 0;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.theatre-discovery-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold);
+}
+
+/* Visual header */
+
+.theatre-card-visual {
+  position: relative;
+  height: 155px;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(212, 175, 55, 0.2),
+      transparent 42%
+    ),
+    linear-gradient(135deg, #24221b, #111114 70%);
+  border-bottom: 1px solid var(--border);
+}
+
+.theatre-visual-pattern {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.theatre-visual-pattern > span {
+  color: rgba(243, 198, 105, 0.75);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.35em;
+}
+
+.theatre-visual-symbol {
+  color: rgba(212, 175, 55, 0.22);
+  font-family: Manrope, sans-serif;
+  font-size: 76px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.theatre-visual-pattern small {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 8px;
+  letter-spacing: 0.24em;
+}
+
+.theatre-status {
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 9px;
+  color: #D1FAE5;
+  background: rgba(16, 185, 129, 0.13);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 5px;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.theatre-status > span {
+  width: 6px;
+  height: 6px;
+  background: #10B981;
+  border-radius: 50%;
+}
+
+/* Card information */
+
+.theatre-card-content {
+  padding: 20px;
+}
+
+.theatre-card-label {
+  color: var(--champagne);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.theatre-card-content h3 {
+  margin: 9px 0;
+  color: var(--text-primary);
+  font-family: Manrope, sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.theatre-address {
+  min-height: 40px;
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+/* Statistics */
+
+.theatre-card-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 17px 0;
+  margin-top: 13px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.theatre-card-stats > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.theatre-card-stats strong {
+  color: var(--champagne);
+  font-family: Manrope, sans-serif;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.theatre-card-stats span {
+  color: var(--text-secondary);
+  font-size: 10px;
+}
+
+/* Screen technologies */
+
+.theatre-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 15px;
+}
+
+.theatre-technologies span {
+  padding: 6px 9px;
+  color: var(--text-secondary);
+  background: var(--page-bg);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+/* Amenities */
+
+.theatre-amenities {
+  margin-top: 17px;
+}
+
+.theatre-amenities > span {
+  color: var(--text-secondary);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.theatre-amenities p {
+  margin: 7px 0 0;
+  color: var(--text-secondary);
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+/* Card footer */
+
+.theatre-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 19px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.theatre-card-footer > span:first-child {
+  color: var(--text-primary);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.theatre-card-arrow {
+  color: var(--champagne);
+  font-size: 19px;
+}
+
+/* Loading and error */
+
+.theatres-state {
+  padding: 35px;
+  color: var(--text-secondary);
+  background: var(--card-bg);
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.theatres-state button {
+  margin-top: 10px;
+  padding: 9px 15px;
+  color: #0B0B0D;
+  background: var(--gold);
+  border: none;
+  border-radius: 7px;
+  font-weight: 700;
+}
+
+/* Responsive */
+
+@media (max-width: 1050px) {
+  .theatres-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .theatres-section {
+    padding: 42px 18px;
+  }
+
+  .theatres-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .theatres-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .theatre-card-visual {
+    height: 135px;
+  }
+
+  .theatre-card-content {
+    padding: 17px;
+  }
+}

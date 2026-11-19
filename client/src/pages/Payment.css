@@ -1,0 +1,1514 @@
+
+/* =========================================
+   CINELOCKZ PAYMENT PAGE
+========================================= */
+
+.payment-page {
+  min-height: 100vh;
+  padding: 28px 24px 60px;
+  background: #0B0B0D;
+  color: #FFFFFF;
+}
+
+.payment-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+
+.payment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #2A2A32;
+}
+
+.payment-back {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #A1A1AA;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.payment-back:hover {
+  color: #D4AF37;
+}
+
+.payment-brand {
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.payment-brand span {
+  color: #D4AF37;
+}
+
+.payment-secure {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #10B981;
+  font-size: 12px;
+}
+
+/* =========================================
+   CHECKOUT PAGE
+========================================= */
+
+.payment-title {
+  margin: 40px 0 30px;
+}
+
+.payment-eyebrow {
+  color: #D4AF37;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.payment-title h1,
+.payment-success h1 {
+  margin: 10px 0;
+  font-size: 32px;
+}
+
+.payment-title p,
+.payment-success > p {
+  color: #A1A1AA;
+  line-height: 1.6;
+}
+
+.payment-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(300px, 0.8fr);
+  align-items: start;
+  gap: 24px;
+}
+
+.payment-method-card,
+.payment-order-card {
+  padding: 26px;
+  background: #18181C;
+  border: 1px solid #2A2A32;
+  border-radius: 14px;
+}
+
+.payment-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.payment-section-heading h2,
+.payment-order-card h2 {
+  margin: 0;
+  font-size: 19px;
+}
+
+.payment-section-heading svg {
+  color: #10B981;
+}
+
+.payment-demo-warning {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 13px;
+  margin-bottom: 20px;
+  color: #D4AF37;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* PAYMENT METHODS */
+
+.payment-method-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.payment-method {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  color: #FFFFFF;
+  background: #0B0B0D;
+  border: 1px solid #2A2A32;
+  border-radius: 9px;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.payment-method:hover,
+.payment-method.active {
+  border-color: #D4AF37;
+}
+
+.payment-method > svg {
+  width: 23px;
+  color: #D4AF37;
+}
+
+.payment-method > span:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 5px;
+}
+
+.payment-method strong {
+  font-size: 14px;
+}
+
+.payment-method small {
+  color: #A1A1AA;
+  font-size: 11px;
+}
+
+.payment-radio {
+  width: 17px;
+  height: 17px;
+  border: 1px solid #71717A;
+  border-radius: 50%;
+}
+
+.payment-method.active .payment-radio {
+  border: 5px solid #D4AF37;
+}
+
+/* PAYMENT METHOD INFORMATION */
+
+.payment-method-info {
+  margin: 24px 0;
+  padding: 20px;
+  background: #0B0B0D;
+  border: 1px solid #2A2A32;
+  border-radius: 10px;
+}
+
+.payment-method-info h3 {
+  margin: 0 0 15px;
+  font-size: 14px;
+}
+
+.demo-upi-box,
+.demo-card-box {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 15px;
+  background: #18181C;
+  border: 1px solid #2A2A32;
+  border-radius: 8px;
+}
+
+.demo-upi-box > svg,
+.demo-card-box > svg {
+  color: #D4AF37;
+}
+
+.demo-upi-box div,
+.demo-card-box div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.demo-upi-box strong,
+.demo-card-box strong {
+  font-size: 13px;
+}
+
+.demo-upi-box span,
+.demo-card-box span,
+.demo-card-box small {
+  color: #A1A1AA;
+  font-size: 12px;
+}
+
+/* BUTTONS */
+
+.payment-primary-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 16px;
+  color: #0B0B0D;
+  background: linear-gradient(135deg, #D4AF37, #F3C669);
+  border: 0;
+  border-radius: 9px;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.payment-primary-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+}
+
+.payment-primary-button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.payment-disclaimer {
+  margin: 14px 0 0;
+  color: #A1A1AA;
+  font-size: 11px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* =========================================
+   BOOKING SUMMARY
+========================================= */
+
+.payment-order-card h2 {
+  margin-bottom: 22px;
+}
+
+.payment-movie {
+  display: flex;
+  gap: 15px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #2A2A32;
+}
+
+.payment-movie img {
+  width: 78px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+.payment-movie div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+
+.payment-movie h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.payment-movie span {
+  color: #A1A1AA;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.payment-order-detail,
+.payment-price-breakdown > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 13px 0;
+  border-bottom: 1px solid #2A2A32;
+}
+
+.payment-order-detail span,
+.payment-price-breakdown span {
+  color: #A1A1AA;
+  font-size: 12px;
+}
+
+.payment-order-detail strong,
+.payment-price-breakdown strong {
+  max-width: 60%;
+  color: #FFFFFF;
+  font-size: 12px;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.payment-price-breakdown {
+  margin-top: 12px;
+}
+
+.payment-price-breakdown > div {
+  border: 0;
+}
+
+.payment-price-breakdown .payment-grand-total {
+  margin-top: 8px;
+  padding-top: 17px;
+  border-top: 1px solid #D4AF37;
+}
+
+.payment-grand-total span,
+.payment-grand-total strong {
+  color: #D4AF37;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.payment-trust {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+  color: #10B981;
+  font-size: 12px;
+}
+
+/* =========================================
+   PAYMENT SUCCESS
+========================================= */
+
+.payment-success {
+  max-width: 680px;
+  margin: 45px auto 0;
+  text-align: center;
+}
+
+.success-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+  color: #10B981;
+}
+
+.payment-success h1 {
+  font-size: 30px;
+}
+
+.payment-success > p {
+  margin: 8px auto;
+}
+
+/* =========================================
+   CINELOCKZ CINEMA TICKET
+========================================= */
+
+.cinelockz-ticket {
+  position: relative;
+  width: 100%;
+  max-width: 465px;
+  margin: 35px auto 28px;
+  padding: 22px 23px 18px;
+  overflow: hidden;
+  color: #18181C;
+  background: #FFFFFF;
+  border-radius: 17px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+/* Ticket perforation effect */
+
+.cinelockz-ticket::before,
+.cinelockz-ticket::after {
+  position: absolute;
+  z-index: 2;
+  top: 43%;
+  width: 27px;
+  height: 27px;
+  content: "";
+  background: #0B0B0D;
+  border-radius: 50%;
+}
+
+.cinelockz-ticket::before {
+  left: -14px;
+}
+
+.cinelockz-ticket::after {
+  right: -14px;
+}
+
+/* TICKET HEADER */
+
+.cinelockz-ticket-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  margin-bottom: 17px;
+}
+
+.cinelockz-ticket-brand {
+  display: flex;
+  align-items: center;
+  font-size: 23px;
+  font-weight: 950;
+  letter-spacing: -1.3px;
+}
+
+.ticket-brand-main {
+  color: #18181C;
+}
+
+.ticket-brand-accent {
+  color: #D4AF37;
+}
+
+.ticket-confirmed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 11px;
+  color: #FFFFFF;
+  background: #138A45;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.ticket-confirmed svg {
+  color: #FFFFFF;
+}
+
+/* POSTER */
+
+.cinelockz-ticket-poster {
+  width: 100%;
+  height: 225px;
+  overflow: hidden;
+  background: #18181C;
+  border-radius: 11px;
+}
+
+.cinelockz-ticket-poster img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.ticket-poster-placeholder {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px;
+  color: #D4AF37;
+  background: #18181C;
+}
+
+.ticket-poster-placeholder span {
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+/* MOVIE TITLE */
+
+.cinelockz-ticket-movie {
+  padding: 15px 5px 17px;
+}
+
+.cinelockz-ticket-movie h2 {
+  margin: 0 0 10px;
+  color: #18181C;
+  font-size: 23px;
+  font-weight: 900;
+  line-height: 1.25;
+}
+
+.ticket-movie-tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.ticket-movie-tags span {
+  padding: 4px 8px;
+  color: #18181C;
+  border: 1px solid #55555D;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* CINEMA DETAILS */
+
+.cinelockz-ticket-details {
+  padding: 15px 12px;
+  background: #F0F0F0;
+  border-radius: 12px;
+}
+
+.ticket-detail-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 0;
+}
+
+.ticket-detail-block > span {
+  color: #55555D;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+}
+
+.ticket-detail-block strong {
+  color: #18181C;
+  font-size: 17px;
+  font-weight: 850;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.ticket-detail-block small {
+  color: #55555D;
+  font-size: 12px;
+}
+
+.ticket-detail-divider {
+  height: 1px;
+  margin: 7px 0;
+  border-top: 1px dashed #A1A1AA;
+}
+
+/* EXPERIENCE FORMAT */
+
+.ticket-experience {
+  padding: 11px 5px;
+  color: #55555D;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* BOOKING ID */
+
+.cinelockz-ticket-booking {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 5px 16px;
+  border-top: 1px dashed #A1A1AA;
+  border-bottom: 1px dashed #A1A1AA;
+}
+
+.cinelockz-ticket-booking > span {
+  color: #55555D;
+  font-size: 11px;
+}
+
+.cinelockz-ticket-booking > strong {
+  color: #18181C;
+  font-size: 21px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  overflow-wrap: anywhere;
+}
+
+.cinelockz-ticket-booking > small {
+  color: #55555D;
+  font-size: 10px;
+  overflow-wrap: anywhere;
+}
+
+/* QR CODE */
+
+.cinelockz-ticket-qr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 17px;
+  padding: 20px 5px 16px;
+}
+
+.ticket-qr-code {
+  flex-shrink: 0;
+  padding: 7px;
+  background: #FFFFFF;
+}
+
+.ticket-qr-code svg {
+  display: block;
+  width: 145px;
+  height: 145px;
+}
+
+.ticket-qr-instructions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+}
+
+.ticket-qr-instructions strong {
+  color: #18181C;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.ticket-qr-instructions span {
+  color: #55555D;
+  font-size: 10px;
+}
+
+.ticket-qr-instructions small {
+  color: #A1A1AA;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+/* TICKET FOOTER */
+
+.cinelockz-ticket-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 3px 10px;
+  border-top: 1px dashed #A1A1AA;
+}
+
+.cinelockz-ticket-footer > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: left;
+}
+
+.cinelockz-ticket-footer > div:last-child {
+  text-align: right;
+}
+
+.cinelockz-ticket-footer span {
+  color: #55555D;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.cinelockz-ticket-footer strong {
+  color: #18181C;
+  font-size: 14px;
+  font-weight: 850;
+}
+
+/* DEMO WARNING */
+
+.ticket-demo-warning {
+  margin: 7px -23px -18px;
+  padding: 12px 8px;
+  color: #FFFFFF;
+  background: #18181C;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* =========================================
+   TICKET ACTIONS
+========================================= */
+
+.ticket-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 465px;
+  margin: 0 auto;
+}
+
+.ticket-home-button {
+  width: 100%;
+  padding: 14px;
+  color: #FFFFFF;
+  background: #18181C;
+  border: 1px solid #2A2A32;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ticket-home-button:hover {
+  border-color: #D4AF37;
+  color: #D4AF37;
+}
+
+.ticket-demo-note {
+  margin-top: 15px !important;
+  color: #A1A1AA;
+  font-size: 11px;
+}
+
+/* EMPTY STATE */
+
+.payment-empty {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  text-align: center;
+}
+
+.payment-empty p {
+  color: #A1A1AA;
+}
+
+.payment-empty button {
+  padding: 12px 22px;
+  color: #0B0B0D;
+  background: #D4AF37;
+  border: 0;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 760px) {
+  .payment-page {
+    padding: 20px 14px 40px;
+  }
+
+  .payment-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .payment-title h1 {
+    font-size: 26px;
+  }
+
+  .payment-header {
+    gap: 10px;
+  }
+
+  .payment-brand {
+    font-size: 17px;
+  }
+
+  .payment-secure {
+    font-size: 10px;
+  }
+
+  .payment-method-card,
+  .payment-order-card {
+    padding: 20px 15px;
+  }
+
+  .cinelockz-ticket {
+    max-width: 465px;
+  }
+}
+
+@media (max-width: 480px) {
+  .payment-back {
+    font-size: 11px;
+  }
+
+  .payment-brand {
+    font-size: 14px;
+  }
+
+  .payment-secure {
+    font-size: 9px;
+  }
+
+  .cinelockz-ticket {
+    padding: 17px 15px 15px;
+  }
+
+  .cinelockz-ticket-header {
+    gap: 6px;
+  }
+
+  .cinelockz-ticket-brand {
+    font-size: 19px;
+  }
+
+  .ticket-confirmed {
+    padding: 8px 7px;
+    font-size: 8px;
+  }
+
+  .cinelockz-ticket-poster {
+    height: 185px;
+  }
+
+  .cinelockz-ticket-movie h2 {
+    font-size: 20px;
+  }
+
+  .ticket-detail-block strong {
+    font-size: 15px;
+  }
+
+  .cinelockz-ticket-qr {
+    flex-direction: column;
+  }
+
+  .ticket-qr-code svg {
+    width: 150px;
+    height: 150px;
+  }
+
+  .ticket-demo-warning {
+    margin-right: -15px;
+    margin-left: -15px;
+    margin-bottom: -15px;
+    font-size: 8px;
+  }
+}
+
+/* =========================================
+   PRINT / SAVE AS PDF
+========================================= */
+
+@media print {
+  @page {
+    size: 80mm auto;
+    margin: 5mm;
+  }
+
+  html,
+  body {
+    background: #FFFFFF !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  body * {
+    visibility: hidden !important;
+  }
+
+  .payment-success,
+  .payment-success * {
+    visibility: visible !important;
+  }
+
+  .payment-page {
+    min-height: auto !important;
+    padding: 0 !important;
+    background: #FFFFFF !important;
+  }
+
+  .payment-container {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .payment-success {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .cinelockz-ticket {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 15px 12px !important;
+    box-shadow: none !important;
+    border: 1px solid #DDDDDD !important;
+    border-radius: 8px !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .cinelockz-ticket::before,
+  .cinelockz-ticket::after {
+    display: none !important;
+  }
+
+  .cinelockz-ticket-poster {
+    height: 145px !important;
+  }
+
+  .ticket-qr-code svg {
+    width: 115px !important;
+    height: 115px !important;
+  }
+
+  .cinelockz-ticket-footer,
+  .cinelockz-ticket-details,
+  .ticket-demo-warning {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}
+
+
+/* =========================================
+   CINELOCKZ - COMPACT LANDSCAPE TICKET
+   Add this block at the END of Payment.css
+========================================= */
+
+.cinelockz-ticket {
+  width: 100%;
+  max-width: 720px;
+  margin: 30px auto;
+  padding: 18px;
+  display: grid;
+  grid-template-columns: 175px minmax(0, 1fr);
+  grid-template-areas:
+    "header header"
+    "poster movie"
+    "poster details"
+    "poster experience"
+    "booking qr"
+    "footer footer"
+    "warning warning";
+  column-gap: 18px;
+  row-gap: 10px;
+  border-radius: 12px;
+  background: #FFFFFF;
+  color: #18181C;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+  text-align: left;
+}
+
+/* Ticket header */
+
+.cinelockz-ticket-header {
+  grid-area: header;
+  margin: 0;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed #A1A1AA;
+}
+
+.cinelockz-ticket-brand {
+  font-size: 22px;
+}
+
+.ticket-confirmed {
+  padding: 8px 12px;
+  font-size: 10px;
+}
+
+/* Poster */
+
+.cinelockz-ticket-poster {
+  grid-area: poster;
+  width: 100%;
+  height: 220px;
+  align-self: stretch;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.cinelockz-ticket-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Movie title */
+
+.cinelockz-ticket-movie {
+  grid-area: movie;
+  padding: 4px 0;
+  text-align: left;
+}
+
+.cinelockz-ticket-movie h2 {
+  margin: 0 0 9px;
+  font-size: 21px;
+  line-height: 1.2;
+}
+
+.ticket-movie-tags {
+  justify-content: flex-start;
+}
+
+/* Cinema details */
+
+.cinelockz-ticket-details {
+  grid-area: details;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+  padding: 11px;
+  border-radius: 7px;
+  background: #F0F0F0;
+}
+
+.ticket-detail-block {
+  align-items: flex-start;
+  gap: 3px;
+  padding: 2px;
+  text-align: left;
+}
+
+.ticket-detail-block strong {
+  font-size: 12px;
+}
+
+.ticket-detail-block > span {
+  font-size: 9px;
+}
+
+.ticket-detail-block small {
+  font-size: 10px;
+}
+
+.ticket-detail-divider {
+  display: none;
+}
+
+/* Experience */
+
+.ticket-experience {
+  grid-area: experience;
+  padding: 2px 0;
+  text-align: left;
+  font-size: 9px;
+}
+
+/* Booking reference */
+
+.cinelockz-ticket-booking {
+  grid-area: booking;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 10px 5px;
+  border-top: 1px dashed #A1A1AA;
+  border-bottom: 0;
+  text-align: left;
+}
+
+.cinelockz-ticket-booking > span {
+  font-size: 9px;
+}
+
+.cinelockz-ticket-booking > strong {
+  font-size: 16px;
+}
+
+.cinelockz-ticket-booking > small {
+  font-size: 9px;
+}
+
+/* QR code */
+
+.cinelockz-ticket-qr {
+  grid-area: qr;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 7px 0;
+  border-top: 1px dashed #A1A1AA;
+}
+
+.ticket-qr-code {
+  padding: 4px;
+}
+
+.ticket-qr-code svg {
+  width: 92px;
+  height: 92px;
+}
+
+.ticket-qr-instructions {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.ticket-qr-instructions strong {
+  font-size: 9px;
+}
+
+.ticket-qr-instructions span,
+.ticket-qr-instructions small {
+  font-size: 8px;
+}
+
+/* Footer */
+
+.cinelockz-ticket-footer {
+  grid-area: footer;
+  padding: 10px 4px;
+  border-top: 1px dashed #A1A1AA;
+}
+
+.cinelockz-ticket-footer span {
+  font-size: 8px;
+}
+
+.cinelockz-ticket-footer strong {
+  font-size: 12px;
+}
+
+/* Demo disclaimer */
+
+.ticket-demo-warning {
+  grid-area: warning;
+  margin: 0 -18px -18px;
+  padding: 9px;
+  border-radius: 0 0 12px 12px;
+  text-align: center;
+  font-size: 8px;
+}
+
+/* Perforated edges */
+
+.cinelockz-ticket::before,
+.cinelockz-ticket::after {
+  top: 50%;
+  width: 22px;
+  height: 22px;
+  background: #0B0B0D;
+}
+
+.cinelockz-ticket::before {
+  left: -12px;
+}
+
+.cinelockz-ticket::after {
+  right: -12px;
+}
+
+/* =========================================
+   MOBILE TICKET
+========================================= */
+
+@media (max-width: 560px) {
+  .cinelockz-ticket {
+    max-width: 390px;
+    grid-template-columns: 105px minmax(0, 1fr);
+    column-gap: 11px;
+    padding: 13px;
+    row-gap: 8px;
+  }
+
+  .cinelockz-ticket-poster {
+    height: 175px;
+  }
+
+  .cinelockz-ticket-movie h2 {
+    font-size: 16px;
+  }
+
+  .cinelockz-ticket-details {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 8px;
+  }
+
+  .ticket-detail-block strong {
+    font-size: 10px;
+  }
+
+  .ticket-detail-block small {
+    font-size: 9px;
+  }
+
+  .ticket-qr-code svg {
+    width: 75px;
+    height: 75px;
+  }
+
+  .cinelockz-ticket-booking > strong {
+    font-size: 12px;
+  }
+
+  .ticket-confirmed {
+    padding: 7px;
+    font-size: 8px;
+  }
+
+  .cinelockz-ticket-brand {
+    font-size: 17px;
+  }
+
+  .ticket-demo-warning {
+    margin: 0 -13px -13px;
+  }
+}
+
+/* =========================================
+   PRINT TICKET
+========================================= */
+
+@media print {
+  @page {
+    size: 190mm 120mm;
+    margin: 5mm;
+  }
+
+  .cinelockz-ticket {
+    width: 180mm !important;
+    max-width: 180mm !important;
+    min-height: 100mm;
+    margin: 0 auto !important;
+    padding: 5mm !important;
+    grid-template-columns: 45mm minmax(0, 1fr) !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .cinelockz-ticket-poster {
+    height: 55mm !important;
+  }
+
+  .ticket-qr-code svg {
+    width: 25mm !important;
+    height: 25mm !important;
+  }
+
+  .cinelockz-ticket::before,
+  .cinelockz-ticket::after {
+    display: none !important;
+  }
+}
+
+
+/* =========================================
+   CINELOCKZ PAYMENT — LIGHT THEME
+========================================= */
+
+:root[data-theme="light"] .payment-page {
+  background: #F5F5F7;
+  color: #18181B;
+}
+
+:root[data-theme="light"] .payment-header {
+  border-color: #E4E4E7;
+}
+
+:root[data-theme="light"] .payment-back {
+  color: #71717A;
+}
+
+:root[data-theme="light"] .payment-title p,
+:root[data-theme="light"] .payment-success > p {
+  color: #71717A;
+}
+
+:root[data-theme="light"] .payment-method-card,
+:root[data-theme="light"] .payment-order-card {
+  background: #FFFFFF;
+  color: #18181B;
+  border-color: #E4E4E7;
+}
+
+:root[data-theme="light"] .payment-section-heading h2,
+:root[data-theme="light"] .payment-order-card h2,
+:root[data-theme="light"] .payment-method-info h3 {
+  color: #18181B;
+}
+
+:root[data-theme="light"] .payment-method {
+  color: #18181B;
+  background: #F5F5F7;
+  border-color: #E4E4E7;
+}
+
+:root[data-theme="light"] .payment-method:hover,
+:root[data-theme="light"] .payment-method.active {
+  border-color: #A78319;
+}
+
+:root[data-theme="light"] .payment-method small,
+:root[data-theme="light"] .payment-movie span,
+:root[data-theme="light"] .payment-order-detail span,
+:root[data-theme="light"] .payment-price-breakdown span {
+  color: #71717A;
+}
+
+:root[data-theme="light"] .payment-method-info {
+  background: #F5F5F7;
+  border-color: #E4E4E7;
+}
+
+:root[data-theme="light"] .demo-upi-box,
+:root[data-theme="light"] .demo-card-box {
+  background: #FFFFFF;
+  border-color: #E4E4E7;
+}
+
+:root[data-theme="light"] .demo-upi-box strong,
+:root[data-theme="light"] .demo-card-box strong {
+  color: #18181B;
+}
+
+:root[data-theme="light"] .demo-upi-box span,
+:root[data-theme="light"] .demo-card-box span,
+:root[data-theme="light"] .demo-card-box small,
+:root[data-theme="light"] .payment-disclaimer {
+  color: #71717A;
+}
+
+:root[data-theme="light"] .payment-movie,
+:root[data-theme="light"] .payment-order-detail {
+  border-color: #E4E4E7;
+}
+
+:root[data-theme="light"] .payment-movie h3,
+:root[data-theme="light"] .payment-order-detail strong,
+:root[data-theme="light"] .payment-price-breakdown strong {
+  color: #18181B;
+}
+
+:root[data-theme="light"] .payment-price-breakdown .payment-grand-total {
+  border-color: #A78319;
+}
+
+:root[data-theme="light"] .payment-grand-total span,
+:root[data-theme="light"] .payment-grand-total strong {
+  color: #A78319;
+}
+
+:root[data-theme="light"] .payment-empty {
+  color: #18181B;
+}
+
+:root[data-theme="light"] .payment-empty p {
+  color: #71717A;
+}
+
+:root[data-theme="light"] .payment-empty button {
+  color: #0B0B0D;
+  background: linear-gradient(135deg, #D4AF37, #F3C669);
+}
+
+:root[data-theme="light"] .ticket-home-button {
+  color: #18181B;
+  background: #FFFFFF;
+  border-color: #E4E4E7;
+}
+
+:root[data-theme="light"] .ticket-home-button:hover {
+  color: #A78319;
+  border-color: #A78319;
+}
+
+:root[data-theme="light"] .ticket-demo-note {
+  color: #71717A;
+}
+
+/* Keep the downloadable ticket white in both themes */
+.cinelockz-ticket {
+  background: #FFFFFF;
+  color: #18181C;
+}
+
+:root[data-theme="light"] .cinelockz-ticket::before,
+:root[data-theme="light"] .cinelockz-ticket::after {
+  background: #F5F5F7;
+}
+
+
+.ticket-video-section {
+  width: 100%;
+  max-width: 850px;
+  margin: 30px auto;
+  text-align: center;
+  animation: ticketVideoFade 0.5s ease;
+}
+
+.ticket-video-heading h2 {
+  color: var(--text-primary, #ffffff);
+  margin: 12px 0;
+}
+
+.ticket-video-heading p {
+  color: var(--text-secondary, #a1a1aa);
+  margin-bottom: 20px;
+}
+
+.ticket-demo-video {
+  display: block;
+  width: 100%;
+  max-height: 480px;
+  background: #000;
+  border: 1px solid #d4af37;
+  border-radius: 14px;
+  object-fit: contain;
+}
+
+.ticket-video-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.ticket-video-footer span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--text-secondary, #a1a1aa);
+  font-size: 13px;
+}
+
+.ticket-skip-video {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  background: #d4af37;
+  color: #0b0b0d;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ticket-skip-video:hover {
+  background: #f3c669;
+}
+
+@keyframes ticketVideoFade {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .ticket-video-footer {
+    flex-direction: column;
+  }
+
+  .ticket-video-footer button {
+    width: 100%;
+  }
+}

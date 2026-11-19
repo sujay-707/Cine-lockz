@@ -1,0 +1,1388 @@
+
+/* =========================================
+   CINELOCKZ — APPLICATION STYLES
+   Navbar: Navbar.css
+   Footer: Footer.css
+   Global theme: index.css
+========================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+/* =========================================
+   APPLICATION SHELL
+========================================= */
+
+.app-shell {
+  min-height: 100vh;
+  color: var(--text-primary);
+  background:
+    radial-gradient(
+      ellipse at 50% -20%,
+      rgba(128, 128, 128, 0.09),
+      transparent 48%
+    ),
+    var(--page-bg);
+}
+
+button,
+a,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+/* =========================================
+   CINELOCKZ PROMOTIONAL BANNER CAROUSEL
+========================================= */
+
+.promo-carousel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4.8 / 1;
+  min-height: 150px;
+  max-height: 390px;
+  overflow: hidden;
+  background: #18181C;
+  isolation: isolate;
+}
+
+.promo-track {
+  position: absolute;
+  inset: 0;
+}
+
+.promo-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.65s ease, visibility 0.65s ease;
+}
+
+.promo-slide.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+
+.promo-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.promo-slide img.loaded {
+  opacity: 1;
+}
+
+/* Previous / next controls */
+
+.promo-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  transform: translateY(-50%);
+
+  display: grid;
+  place-items: center;
+
+  width: 42px;
+  height: 42px;
+
+  color: #FFFFFF;
+  background: rgba(11, 11, 13, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+
+  opacity: 0;
+  transition: opacity 0.2s ease, background 0.2s ease;
+}
+
+.promo-carousel:hover .promo-arrow,
+.promo-carousel:focus-within .promo-arrow {
+  opacity: 1;
+}
+
+.promo-arrow:hover {
+  color: #0B0B0D;
+  background: #D4AF37;
+  border-color: #D4AF37;
+}
+
+.promo-arrow-left {
+  left: 18px;
+}
+
+.promo-arrow-right {
+  right: 18px;
+}
+
+/* Pagination */
+
+.promo-indicators {
+  position: absolute;
+  z-index: 4;
+  bottom: 13px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 7px 11px;
+  background: rgba(11, 11, 13, 0.55);
+  border-radius: 20px;
+}
+
+.promo-indicators button {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+
+  background: rgba(255, 255, 255, 0.55);
+  border: 0;
+  border-radius: 20px;
+
+  transition: width 0.25s ease, background 0.25s ease;
+}
+
+.promo-indicators button.active {
+  width: 23px;
+  background: #D4AF37;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .promo-carousel {
+    aspect-ratio: 2.2 / 1;
+    min-height: 0;
+    max-height: none;
+  }
+
+  .promo-slide img {
+    object-fit: contain;
+  }
+
+  .promo-arrow {
+    width: 31px;
+    height: 31px;
+    opacity: 1;
+  }
+
+  .promo-arrow-left {
+    left: 7px;
+  }
+
+  .promo-arrow-right {
+    right: 7px;
+  }
+
+  .promo-indicators {
+    bottom: 5px;
+    gap: 6px;
+    padding: 5px 8px;
+  }
+
+  .promo-indicators button {
+    width: 6px;
+    height: 6px;
+  }
+
+  .promo-indicators button.active {
+    width: 17px;
+  }
+}
+
+/* =========================================
+   BUTTON SYSTEM
+========================================= */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  padding: 12px 18px;
+
+  border: 1px solid transparent;
+  border-radius: 10px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-gold {
+  color: #0B0B0D;
+  background: linear-gradient(135deg, #D4AF37, #F3C669);
+  border-color: var(--gold);
+}
+
+.button-gold:hover {
+  background: linear-gradient(135deg, #F3C669, #D4AF37);
+}
+
+.button-outline {
+  color: #FFFFFF;
+  background: rgba(11, 11, 13, 0.55);
+  border-color: #777777;
+}
+
+.button-outline:hover {
+  border-color: var(--champagne);
+}
+
+.button.small {
+  padding: 9px 12px;
+  font-size: 11px;
+}
+
+/* =========================================
+   CONTENT SECTIONS
+========================================= */
+
+.content-section {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 42px clamp(20px, 4vw, 64px) 0;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.section-heading > div {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.gold-rule {
+  width: 4px;
+  height: 39px;
+  background: var(--gold);
+  border-radius: 4px;
+}
+
+.section-overline {
+  margin: 0 0 3px;
+  color: var(--text-secondary);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.section-heading h2 {
+  margin: 0;
+  color: var(--text-primary);
+
+  font-family: Manrope, sans-serif;
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+.text-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: var(--champagne);
+  background: none;
+  border: 0;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* =========================================
+   MOVIE GRID
+========================================= */
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.movie-card {
+  overflow: hidden;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 13px;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+  border-color: #6A592A;
+}
+
+.poster-wrap {
+  position: relative;
+  height: clamp(190px, 25vw, 300px);
+  overflow: hidden;
+  background: #222222;
+}
+
+.poster-wrap img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.movie-card:hover .poster-wrap img {
+  transform: scale(1.04);
+}
+
+.poster-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+
+  padding: 5px 9px;
+
+  color: #0B0B0D;
+  background: var(--gold);
+  border-radius: 5px;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.poster-overlay {
+  position: absolute;
+  inset: auto 0 0;
+
+  display: flex;
+  justify-content: center;
+
+  padding: 36px 12px 12px;
+
+  background: linear-gradient(
+    transparent,
+    rgba(0, 0, 0, 0.88)
+  );
+
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.movie-card:hover .poster-overlay {
+  opacity: 1;
+}
+
+.movie-info {
+  padding: 13px 12px 14px;
+}
+
+.movie-info h3 {
+  overflow: hidden;
+  margin: 0 0 8px;
+
+  color: var(--text-primary);
+  font-family: Manrope, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.movie-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+
+  color: var(--text-secondary);
+  font-size: 11px;
+}
+
+.rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+
+  color: var(--champagne);
+  white-space: nowrap;
+}
+
+.card-cta {
+  width: 100%;
+  margin-top: 13px;
+  padding: 9px 10px;
+  font-size: 12px;
+}
+
+/* Empty and loading states */
+
+.empty-state {
+  grid-column: 1 / -1;
+
+  padding: 35px;
+
+  color: var(--text-secondary);
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+
+  text-align: center;
+}
+
+/* =========================================
+   EVENTS
+========================================= */
+
+.compact-section {
+  padding-top: 50px;
+}
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.event-card {
+  position: relative;
+  height: 155px;
+  overflow: hidden;
+
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.event-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.67;
+  transition: transform 0.3s ease;
+}
+
+.event-card:hover img {
+  transform: scale(1.04);
+}
+
+.event-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    90deg,
+    rgba(11, 11, 13, 0.9),
+    rgba(11, 11, 13, 0.08)
+  );
+}
+
+.event-card div {
+  position: absolute;
+  z-index: 1;
+  left: 18px;
+  bottom: 17px;
+}
+
+.event-card h3 {
+  margin: 0 0 5px;
+  color: #FFFFFF;
+  font-family: Manrope, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.event-card p {
+  margin: 0;
+  color: #D4D4D8;
+  font-size: 12px;
+}
+
+/* =========================================
+   SPORTS STRIP
+========================================= */
+
+.sports-strip {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+
+  max-width: 1472px;
+  margin: 40px auto 0;
+  padding: 20px 25px;
+
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 13px;
+}
+
+.sports-strip > div {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  flex: 1;
+
+  color: var(--champagne);
+}
+
+.sports-strip span:not(.sports-divider) {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sports-strip b {
+  color: var(--text-primary);
+  font-size: 13px;
+}
+
+.sports-strip small {
+  color: var(--text-secondary);
+  font-size: 11px;
+}
+
+.sports-divider {
+  width: 1px;
+  height: 38px;
+  background: var(--border);
+}
+
+/* =========================================
+   FEATURE BAR
+========================================= */
+
+.feature-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  max-width: 1472px;
+  margin: 24px auto 0;
+  padding: 22px 15px;
+
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 13px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+  padding: 0 12px;
+
+  border-right: 1px solid var(--border);
+}
+
+.feature-item:last-child {
+  border-right: 0;
+}
+
+.feature-item > svg {
+  width: 34px;
+  height: 34px;
+
+  color: var(--gold);
+  stroke-width: 1.6;
+}
+
+.feature-item span {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.feature-item b {
+  color: var(--text-primary);
+  font-family: Manrope, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.feature-item small {
+  color: var(--text-secondary);
+  font-size: 11px;
+}
+
+/* =========================================
+   MOVIE DETAILS PAGE
+========================================= */
+
+.details-page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 28px clamp(20px, 5vw, 72px) 0;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 8px 0;
+  margin-bottom: 22px;
+
+  color: var(--text-secondary);
+  background: none;
+  border: 0;
+
+  font-size: 13px;
+}
+
+.back-link:hover {
+  color: var(--champagne);
+}
+
+.movie-detail-hero {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  align-items: center;
+  gap: 38px;
+
+  padding: 28px;
+
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+}
+
+.detail-poster {
+  height: 340px;
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+}
+
+.detail-poster img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detail-copy {
+  max-width: 760px;
+}
+
+.detail-eyebrow {
+  display: inline-flex;
+  padding: 7px 10px;
+
+  color: var(--champagne);
+  border: 1px solid #665322;
+  border-radius: 5px;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.detail-copy h1 {
+  margin: 17px 0 12px;
+
+  color: var(--text-primary);
+  font-family: Manrope, sans-serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.detail-rating {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  color: var(--champagne);
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.detail-rating span {
+  margin-left: 4px;
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.detail-facts {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 11px;
+
+  margin: 18px 0;
+
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.detail-facts i {
+  width: 3px;
+  height: 3px;
+  background: var(--text-secondary);
+  border-radius: 50%;
+}
+
+.detail-copy > p {
+  max-width: 650px;
+  margin: 0 0 22px;
+
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* =========================================
+   SHOWTIME SELECTION
+========================================= */
+
+.showtimes-section {
+  padding: 48px 0 0;
+}
+
+.showtimes-title {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.showtimes-title h2 {
+  margin: 4px 0 0;
+  color: var(--text-primary);
+  font-family: Manrope, sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.city-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.city-label svg {
+  color: var(--champagne);
+}
+
+/* Booking filters */
+
+.booking-filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  padding: 18px;
+  margin-bottom: 17px;
+
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 13px;
+}
+
+.date-picker-row,
+.format-picker {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.date-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+
+  width: 62px;
+  min-height: 76px;
+
+  color: var(--text-secondary);
+  background: var(--page-bg);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+}
+
+.date-chip span,
+.date-chip small {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.date-chip b {
+  color: var(--text-primary);
+  font-family: Manrope, sans-serif;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.date-chip.selected {
+  color: var(--champagne);
+  background: rgba(212, 175, 55, 0.12);
+  border-color: var(--gold);
+}
+
+.date-chip.selected b {
+  color: var(--champagne);
+}
+
+.format-picker > span {
+  margin-right: 4px;
+
+  color: var(--text-secondary);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.format-chip {
+  padding: 9px 13px;
+
+  color: var(--text-secondary);
+  background: var(--page-bg);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.format-chip.selected {
+  color: #0B0B0D;
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+/* Theatre list */
+
+.theatre-list {
+  display: grid;
+  gap: 12px;
+}
+
+.theatre-card {
+  display: grid;
+  grid-template-columns: minmax(190px, 1fr) 2fr auto;
+  align-items: center;
+  gap: 18px;
+
+  padding: 20px;
+
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 13px;
+}
+
+.theatre-info h3 {
+  margin: 0 0 7px;
+  color: var(--text-primary);
+  font-family: Manrope, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.theatre-info p {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  margin: 0 0 7px;
+
+  color: var(--text-secondary);
+  font-size: 11px;
+}
+
+.theatre-info p svg {
+  color: var(--champagne);
+}
+
+.theatre-info > span {
+  color: var(--text-secondary);
+  font-size: 10px;
+}
+
+.showtime-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.showtime-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 10px 12px;
+
+  color: var(--text-secondary);
+  background: var(--page-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.showtime-chip svg {
+  color: var(--green);
+}
+
+.showtime-chip:hover,
+.showtime-chip.selected {
+  color: var(--champagne);
+  background: rgba(212, 175, 55, 0.12);
+  border-color: var(--gold);
+}
+
+.showtime-chip.selected svg {
+  color: var(--champagne);
+}
+
+.theatre-legend {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  color: var(--text-secondary);
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.available-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--green);
+  border-radius: 50%;
+}
+
+/* Selection summary */
+
+.selection-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+
+  margin-top: 18px;
+  padding: 17px 19px;
+
+  background: rgba(212, 175, 55, 0.07);
+  border: 1px solid #6A592A;
+  border-radius: 12px;
+}
+
+.selection-summary > div {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  color: var(--champagne);
+}
+
+.selection-summary > div > span {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.selection-summary b {
+  color: var(--text-primary);
+  font-size: 13px;
+}
+
+.selection-summary small {
+  color: var(--text-secondary);
+  font-size: 11px;
+}
+
+.booking-note {
+  margin: 22px 0 0;
+  padding-bottom: 8px;
+
+  color: var(--text-secondary);
+  font-size: 10px;
+  text-align: center;
+}
+
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+  .movie-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .poster-wrap {
+    height: 300px;
+  }
+
+  .feature-item {
+    gap: 9px;
+  }
+
+  .feature-item > svg {
+    width: 27px;
+    height: 27px;
+  }
+}
+
+@media (max-width: 850px) {
+  .movie-detail-hero {
+    grid-template-columns: 190px 1fr;
+    gap: 24px;
+    padding: 20px;
+  }
+
+  .detail-poster {
+    height: 285px;
+  }
+
+  .booking-filters {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .theatre-card {
+    grid-template-columns: 1fr;
+  }
+
+  .theatre-legend {
+    display: none;
+  }
+
+  .showtime-options {
+    gap: 7px;
+  }
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 760px) {
+  .hero {
+    height: 470px;
+  }
+
+  .hero-backdrop {
+    background-position: 58% center;
+  }
+
+  .hero-shade {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(11, 11, 13, 0.97),
+        rgba(11, 11, 13, 0.73) 65%,
+        rgba(11, 11, 13, 0.35)
+      ),
+      linear-gradient(
+        0deg,
+        rgba(11, 11, 13, 0.5),
+        transparent
+      );
+  }
+
+  .hero-content {
+    width: 90%;
+    padding: 58px 0 0 27px;
+  }
+
+  .hero h1 {
+    font-size: 43px;
+  }
+
+  .hero-copy {
+    max-width: 340px;
+    font-size: 13px;
+  }
+
+  .hero-arrow {
+    width: 32px;
+    height: 32px;
+  }
+
+  .hero-arrow.left {
+    left: 8px;
+  }
+
+  .hero-arrow.right {
+    right: 8px;
+  }
+
+  .content-section {
+    padding: 32px 18px 0;
+  }
+
+  .section-heading h2 {
+    font-size: 21px;
+  }
+
+  .section-overline {
+    font-size: 9px;
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .poster-wrap {
+    height: clamp(210px, 67vw, 330px);
+  }
+
+  .poster-overlay {
+    display: none;
+  }
+
+  .movie-info {
+    padding: 11px 10px;
+  }
+
+  .movie-info h3 {
+    font-size: 13px;
+  }
+
+  .movie-meta {
+    font-size: 10px;
+  }
+
+  .card-cta {
+    margin-top: 11px;
+  }
+
+  .event-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .event-card {
+    height: 140px;
+  }
+
+  .sports-strip {
+    width: calc(100% - 36px);
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 17px;
+  }
+
+  .sports-strip > div {
+    min-width: 40%;
+  }
+
+  .sports-strip .button {
+    margin-left: auto;
+  }
+
+  .sports-divider {
+    display: none;
+  }
+
+  .feature-bar {
+    width: calc(100% - 36px);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    padding: 20px 8px;
+  }
+
+  .feature-item {
+    justify-content: flex-start;
+    padding: 0 8px;
+    border: 0;
+  }
+
+  .feature-item b {
+    font-size: 11px;
+  }
+
+  .feature-item small {
+    font-size: 10px;
+  }
+
+  .feature-item > svg {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 560px) {
+  .details-page {
+    padding: 20px 16px 0;
+  }
+
+  .movie-detail-hero {
+    grid-template-columns: 105px 1fr;
+    gap: 15px;
+    padding: 14px;
+  }
+
+  .detail-poster {
+    height: 160px;
+  }
+
+  .detail-copy h1 {
+    margin: 10px 0;
+    font-size: 25px;
+  }
+
+  .detail-eyebrow {
+    padding: 5px 7px;
+    font-size: 8px;
+  }
+
+  .detail-rating {
+    font-size: 12px;
+  }
+
+  .detail-rating span {
+    font-size: 10px;
+  }
+
+  .detail-facts {
+    gap: 7px;
+    margin: 11px 0;
+    font-size: 9px;
+  }
+
+  .detail-copy > p {
+    margin-bottom: 13px;
+    font-size: 11px;
+    line-height: 1.55;
+  }
+
+  .detail-actions .button {
+    padding: 9px 10px;
+    font-size: 10px;
+  }
+
+  .showtimes-section {
+    padding-top: 32px;
+  }
+
+  .showtimes-title h2 {
+    font-size: 21px;
+  }
+
+  .city-label {
+    font-size: 10px;
+  }
+
+  .booking-filters {
+    padding: 12px;
+  }
+
+  .date-picker-row {
+    gap: 6px;
+  }
+
+  .date-chip {
+    width: 51px;
+    min-height: 68px;
+  }
+
+  .format-picker {
+    gap: 6px;
+  }
+
+  .theatre-card {
+    padding: 15px;
+  }
+
+  .theatre-info h3 {
+    font-size: 14px;
+  }
+
+  .showtime-chip {
+    padding: 9px 10px;
+    font-size: 10px;
+  }
+
+  .selection-summary {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .selection-summary .button {
+    width: 100%;
+  }
+
+  .selection-summary small {
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 390px) {
+  .hero h1 {
+    font-size: 37px;
+  }
+
+  .hero-buttons .button {
+    padding: 10px 12px;
+    font-size: 11px;
+  }
+
+  .movie-grid {
+    gap: 9px;
+  }
+
+  .poster-wrap {
+    height: 205px;
+  }
+
+  .movie-info h3 {
+    font-size: 12px;
+  }
+
+  .movie-meta {
+    font-size: 9px;
+  }
+}

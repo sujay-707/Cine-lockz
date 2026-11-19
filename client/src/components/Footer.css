@@ -1,0 +1,451 @@
+
+/* =========================================
+   CINELOCKZ — PREMIUM FOOTER
+========================================= */
+
+footer.site-footer {
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: none;
+  margin: 80px 0 0;
+  padding: 0 clamp(24px, 6vw, 100px);
+  overflow: hidden;
+  box-sizing: border-box;
+
+  color: var(--white);
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+.site-footer * {
+  box-sizing: border-box;
+}
+
+/* Subtle brand glow */
+
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: -180px;
+  left: 15%;
+  width: 420px;
+  height: 250px;
+  background: rgba(212, 175, 55, 0.055);
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+/* Main layout */
+
+.site-footer .footer-main {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 1450px;
+  margin: 0 auto;
+  padding: 66px 0 58px;
+
+  display: grid;
+  grid-template-columns: 1.65fr 0.85fr 1.15fr 1fr;
+  gap: clamp(30px, 5vw, 85px);
+
+  align-items: start;
+}
+
+/* Brand section */
+
+.site-footer .footer-brand-section {
+  max-width: 390px;
+}
+
+.site-footer .footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  color: var(--white);
+  text-decoration: none;
+
+  font-family: Manrope, sans-serif;
+  font-size: 29px;
+  font-weight: 800;
+  letter-spacing: -1.2px;
+}
+
+.site-footer .footer-logo-icon {
+  width: 43px;
+  height: 43px;
+
+  display: grid;
+  place-items: center;
+
+  color: #0B0B0D;
+  background: linear-gradient(135deg, #D4AF37, #F3C669);
+  border-radius: 12px;
+}
+
+.site-footer .footer-gold {
+  color: var(--gold);
+}
+
+.site-footer .footer-description {
+  max-width: 350px;
+  margin: 21px 0 25px;
+
+  color: var(--silver);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.site-footer .footer-brand-points {
+  display: grid;
+  gap: 14px;
+  margin-top: 25px;
+}
+
+.site-footer .footer-brand-points > div {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  color: var(--silver);
+  font-size: 12px;
+}
+
+.site-footer .footer-point-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  font-size: 11px;
+}
+
+/* Social links */
+
+.site-footer .footer-socials {
+  margin-top: 31px;
+}
+
+.site-footer .footer-socials > span {
+  display: block;
+  margin-bottom: 13px;
+
+  color: var(--silver);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.17em;
+}
+
+.site-footer .footer-social-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.site-footer .footer-social-icons a {
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  color: var(--silver);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  font-size: 11px;
+  font-weight: 800;
+  text-decoration: none;
+
+  transition: 0.2s ease;
+}
+
+.site-footer .footer-social-icons a:hover {
+  color: #0B0B0D;
+  background: linear-gradient(135deg, #D4AF37, #F3C669);
+  border-color: var(--gold);
+  transform: translateY(-3px);
+}
+
+/* Footer navigation columns */
+
+.site-footer .footer-column {
+  min-width: 0;
+}
+
+.site-footer .footer-column h3 {
+  margin: 8px 0 25px;
+
+  color: var(--white);
+  font-family: Manrope, sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.035em;
+}
+
+.site-footer .footer-column ul {
+  display: grid;
+  gap: 19px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.site-footer .footer-column li {
+  margin: 0;
+  padding: 0;
+}
+
+.site-footer .footer-column li a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  color: var(--silver);
+  font-size: 12px;
+  line-height: 1.5;
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.site-footer .footer-column li a:hover {
+  color: var(--champagne);
+}
+
+.site-footer .footer-link-arrow {
+  opacity: 0;
+  transform: translate(0, 3px);
+  transition: 0.2s ease;
+}
+
+.site-footer .footer-column li a:hover .footer-link-arrow {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* Support note */
+
+.site-footer .footer-contact-note {
+  max-width: 235px;
+  margin: 24px 0 0;
+
+  color: var(--silver);
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+/* Location strip */
+
+.site-footer .footer-info-strip {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  max-width: 1450px;
+  min-height: 64px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+
+  color: var(--silver);
+  font-size: 11px;
+}
+
+.site-footer .footer-info-strip > span:first-child {
+  color: var(--champagne);
+}
+
+.site-footer .footer-info-divider {
+  display: none;
+}
+
+/* Bottom bar */
+
+.site-footer .footer-bottom {
+  width: 100%;
+  max-width: 1450px;
+  min-height: 76px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.site-footer .footer-bottom p {
+  margin: 0;
+  color: var(--silver);
+  font-size: 11px;
+}
+
+.site-footer .footer-bottom > div {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 13px;
+
+  color: var(--silver);
+  font-size: 11px;
+}
+
+.site-footer .footer-bottom a {
+  color: var(--silver);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.site-footer .footer-bottom a:hover {
+  color: var(--champagne);
+}
+
+.site-footer .footer-back-top {
+  padding: 10px 14px;
+
+  color: var(--champagne);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  transition: 0.2s ease;
+}
+
+.site-footer .footer-back-top:hover {
+  color: #0B0B0D;
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+  footer.site-footer {
+    padding: 0 35px;
+  }
+
+  .site-footer .footer-main {
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 38px;
+  }
+
+  .site-footer .footer-brand-section {
+    grid-column: 1 / -1;
+    max-width: 100%;
+  }
+
+  .site-footer .footer-description {
+    max-width: 480px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+  footer.site-footer {
+    margin-top: 50px;
+    padding: 0 21px;
+  }
+
+  .site-footer .footer-main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 39px 22px;
+    padding: 42px 0;
+  }
+
+  .site-footer .footer-brand-section {
+    grid-column: 1 / -1;
+  }
+
+  .site-footer .footer-logo {
+    font-size: 25px;
+  }
+
+  .site-footer .footer-description {
+    font-size: 12px;
+  }
+
+  .site-footer .footer-column h3 {
+    margin: 5px 0 18px;
+    font-size: 12px;
+  }
+
+  .site-footer .footer-column ul {
+    gap: 15px;
+  }
+
+  .site-footer .footer-column li a {
+    font-size: 11px;
+  }
+
+  .site-footer .footer-info-strip {
+    min-height: 58px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    font-size: 10px;
+  }
+
+  .site-footer .footer-bottom {
+    min-height: auto;
+    padding: 22px 0 27px;
+    flex-wrap: wrap;
+    gap: 17px;
+  }
+
+  .site-footer .footer-bottom p {
+    width: 100%;
+  }
+
+  .site-footer .footer-bottom > div {
+    order: 2;
+    width: 100%;
+    gap: 9px;
+    font-size: 10px;
+  }
+
+  .site-footer .footer-back-top {
+    position: absolute;
+    right: 0;
+    top: 17px;
+  }
+}
+
+/* Small phones */
+
+@media (max-width: 380px) {
+  footer.site-footer {
+    padding: 0 16px;
+  }
+
+  .site-footer .footer-main {
+    column-gap: 14px;
+  }
+
+  .site-footer .footer-column li a {
+    font-size: 10px;
+  }
+}
